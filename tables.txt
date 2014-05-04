@@ -1,0 +1,40 @@
+create 2 tables with these values..
+
+
+users
+userstatus
+
+
+
+mysql> desc users;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| USERNAME  | varchar(100) | NO   | PRI | NULL    |       |
+| FIRSTNAME | varchar(100) | NO   |     | NULL    |       |
+| LASTNAME  | varchar(100) | NO   |     | NULL    |       |
+| PHONE     | varchar(10)  | NO   |     | NULL    |       |
+| PASSWORD  | char(40)     | NO   |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+5 rows in set (0.02 sec)
+create table users
+(
+USERNAME varchar(100) primary key,
+FIRSTNAME varchar(100),
+LASTNAME varchar(100),
+PHONE varchar(10),
+PASSWORD char(40));
+
+
+mysql> desc userstatus;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| status   | varchar(500) | YES  |     | NULL    |       |
+| username | varchar(100) | YES  | MUL | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+2 rows in set (0.02 sec)
+create table userstatus
+(
+status varchar(500),
+username varchar(100));
